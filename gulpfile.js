@@ -1,5 +1,4 @@
 const { src, dest, watch, series } = require('gulp');
-
 // CSS y SASS
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
@@ -8,7 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
 
 // Imagenes
-const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin')
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 
@@ -57,4 +56,5 @@ exports.dev = dev;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
+// exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
+exports.default = series( css, dev  );
